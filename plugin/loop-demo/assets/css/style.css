@@ -1,0 +1,30 @@
+.events {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.event {
+	flex: 0 0 calc(50% - 5px);
+	padding: 5px 10px;
+	margin: 0px 0px 10px;
+	border: 1px dashed rgba(0, 0, 0, 0.3);
+	display: flex;
+	flex-direction: column;
+}
+
+.event-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.event-description {
+	font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+	.event {
+		flex-basis: 100%;
+	}
+}
