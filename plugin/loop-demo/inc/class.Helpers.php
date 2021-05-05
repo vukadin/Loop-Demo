@@ -16,7 +16,7 @@ class Helpers
         $posts = get_posts(
             array(
                 'post_type' => 'event',
-                'post_status' => 'any',
+                'post_status' => array( 'any', 'trash' ),
                 'posts_per_page' => 1,
                 'meta_key' => '_event_id',
                 'meta_value' => $event_id
@@ -145,7 +145,7 @@ class Helpers
             'about' => get_post_meta( $post->ID, '_event_about', true ),
             'organizer' => get_post_meta( $post->ID, '_event_organizer', true ),
             'timestamp' => get_post_meta( $post->ID, '_event_timestamp', true ),
-            'isActive' => $post->post_status === 'draft' ? 0 : 1,
+            'isActive' => $post->post_status === 'publish' ? 1 : 0,
             'email' => get_post_meta( $post->ID, '_event_email', true ),
             'address' => get_post_meta( $post->ID, '_event_address', true ),
             'latitude' => get_post_meta( $post->ID, '_event_latitude', true ),
